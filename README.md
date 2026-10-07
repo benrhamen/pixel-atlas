@@ -22,4 +22,6 @@ Pixel characters and sprites are original game artwork. The character shapes and
 
 ## Browser notes
 
-Single self-contained `index.html`; no build step or score server. Modern browser required for SVG decompression. Device storage is specific to this site's origin and can be cleared. Zoom buttons and continent controls are available; touch pinch is not verified on a physical iPad. Hard (currency/anthem), Space and UK constituent-country boundaries are a future sourced stage, not current features.
+Single self-contained `index.html`; no build step or score server. Flag decompression uses embedded fflate 0.8.2 (MIT), with no DecompressionStream dependency. Device storage is specific to this site's origin and can be cleared. Zoom buttons and continent controls are available; touch pinch is not verified on a physical iPad. Hard (currency/anthem), Space and UK constituent-country boundaries are a future sourced stage, not current features.
+
+fflate copyright (c) 2023 Arjun Barrett, MIT licence embedded in index.html.
