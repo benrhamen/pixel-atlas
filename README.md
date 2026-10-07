@@ -14,7 +14,7 @@ A neon geography and Space learning game. Play at https://benrhamen.github.io/pi
 - Original category-symbol landmark sprites, not exact portraits. Unlock landmark names, locations and source links. Ten-color maps, continent filters, zoom buttons, wheel zoom and pointer pan/pinch. Asia's yellow and Europe's blue rings are requested design colors, not an official Olympic continent mapping.
 - One Avatar panel: name, home, preview, skin, hair, clothing, shape, color and accessories. Random character picks features and a home. Accessories unlock every two correct geography answers. Avatar session only.
 - Device-local top-ten geography leaderboard. No shared score service or connection to Neon Dragon.
-- Space starter: eight planets in Sun-outward order plus Orion, Cassiopeia, Crux/Southern Cross and Big Dipper. Big Dipper is identified as an asterism in Ursa Major, not a constellation. Multiple-choice/manual answers, level-length controls, four-second feedback and restart. Unlimited removes the question cap; geography still has three lives. Space scoring is separate, with no lives or geography collectibles. Drawings are original learning schematics, not to scale, a sky chart or all 88 constellations.
+- Space: eight planets in Sun-outward order plus all 88 constellations and Big Dipper. Big Dipper is identified as an asterism in Ursa Major, not a constellation. Multiple-choice/manual answers, level-length controls, four-second feedback and restart. Unlimited removes the question cap; geography still has three lives. Space scoring is separate, with no lives or geography collectibles. Drawings are original learning schematics, not to scale, a sky chart or all 88 constellations.
 
 
 ## Data and licences
