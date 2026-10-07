@@ -110,7 +110,7 @@ function acceptsAnswer(raw,expected,isCapital){const n=cleanAnswer(raw);const ch
 const NS="http://www.w3.org/2000/svg";
 function ans(w,q=st.quiz){return st.ds==="capitals"?w.c:w.n}
 function pool(){return st.ds==="usa"?USA:POOL.filter(w=>st.region==="UK"?["England","Scotland","Wales","Northern Ireland"].includes(w.n):!REG[st.region].k||w.k===REG[st.region].k)}
-function round(prev){clearTimeout(tm);const p=pool().filter(w=>(st.quiz!=="hard"||HARD_DATA[w.n])&&st.quiz!=="flag"||w.n!=="Afghanistan"&&w.n!=="Northern Ireland");if(!p.length){$('q').textContent='No verified Hard questions in this region. Choose World.';return;}let t=one(p);while(prev&&p.length>1&&t===prev)t=one(p);st.t=t;st.picked=null;st.hint=1;st.fun="";st.note="";
+function round(prev){clearTimeout(tm);const p=pool().filter(w=>(st.quiz!=="hard"||HARD_DATA[w.n])&&(st.quiz!=="flag"||(w.n!=="Afghanistan"&&w.n!=="Northern Ireland")));if(!p.length){$('q').textContent='No verified Hard questions in this region. Choose World.';return;}let t=one(p);while(prev&&p.length>1&&t===prev)t=one(p);st.t=t;st.picked=null;st.hint=1;st.fun="";st.note="";
  if(st.style==="mc"){const base=st.ds==="usa"?USA:POOL;const same=base.filter(w=>w.k===t.k&&w!==t);const o=sh(same.length>=3?same:base.filter(w=>w!==t)).slice(0,3).map(w=>ans(w));st.opts=sh([...o,ans(t)])}render()}
 function restart(p){savedRun=false;if((p.region==="UK"||p.ds==="usa"||p.ds==="capitals")&&st.quiz==="hard")p.quiz="country";Object.assign(st,p,{score:0,lives:3,streak:0,done:0,won:false});round()}
 function resolve(ok,choice){if(st.picked)return;st.picked=choice;let ms=3000;
