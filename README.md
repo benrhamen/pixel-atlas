@@ -5,9 +5,9 @@ A neon geography game. Play at https://benrhamen.github.io/pixel-atlas/.
 - World and USA states: Easy asks by name; Medium asks which country/state has a given capital.
 - Capitals: find the capital city of a country, with a flag and city answers.
 - Multiple choice, click the map, flag questions and a session-only visited-country map.
-- Three lives and ten questions per round. Correct answers show a fact card until you choose Next.
+- Three lives and 10/20/30/50/100 questions per level. Changing length starts a fresh level. Answers show a fact or short feedback for two seconds, then advance automatically.
 - Actual flag SVGs, ten-color neighbor-safe maps, continent filters, zoom buttons, wheel zoom and pointer pan/pinch.
-- Original collectible pixel sprites and a customizable explorer. Clickable skin, hair, clothing, shape, color and accessory choices; Random character picks features and a home country. Accessories unlock every two correct answers.
+- Original collectible pixel sprites and a customizable explorer. One Avatar create/edit panel holds name, home, preview and clickable skin, hair, clothing, shape, color and accessory choices; Random character picks features and a home country. Accessories unlock every two correct answers.
 - Pixel Atlas's own device-local top-ten leaderboard. No shared score service, transmitted player data or connection to Neon Dragon. Current name, home, character and visited map are session-only.
 
 ## Data and licences
