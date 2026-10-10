@@ -400,7 +400,7 @@ function challenge(w){
   if(!q)return resolve(w,true,null);
   const h=S.hops[S.pos];const card=el('div','tr-card');
   const where=el('div','tr-where');const d=el('div');d.append(el('span',null,'Square '+S.pos+' of '+LAST),Object.assign(el('strong'),{textContent:w.n}));
-  where.append(flagEl(w.n),d);card.append(where);
+  const mystery=q.a===w.n;const reveal=()=>{where.innerHTML='';d.lastChild.textContent=w.n;where.append(flagEl(w.n),d)};if(mystery){const qm=el('span','tr-fl tr-qm','?');qm.style.cssText='display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;color:#ffe69a';d.lastChild.textContent='Mystery country';where.append(qm,d);card._rev=reveal}else where.append(flagEl(w.n),d);card.append(where);
   card.append(el('span','tr-tag','MINI QUEST: '+q.tag));
   if(h)card.append(Object.assign(el('div','tr-rules'),{textContent:h.type==='lad'?h.name+' to square '+h.to+': pass to hop on!':h.name+' ahead. Only if you miss.'}));
   const qq=el('div','tr-q');qq.append(document.createTextNode(q.p[0]));
@@ -422,7 +422,7 @@ function resolve(w,good,q,card){
     if(q)msg+=' It was '+q.a+'.'}
   const res=el('div','tr-res '+(good?'ok':'no'));res.append(Object.assign(el('b'),{textContent:msg}));
   if(q&&q.lm)res.append(document.createElement('br'),document.createTextNode(q.lm.name+', '+q.lm.city_or_region+'. '));
-  const box=card||el('div','tr-card');if(!card)stage.append(box);box.append(res);
+  const box=card||el('div','tr-card');if(!card)stage.append(box);if(card&&card._rev)card._rev();box.append(res);
   if(f){const fc=el('div','tr-fact');fc.append(document.createTextNode(w.n+': '+f.text+' '));const a=el('a',null,'Source');a.href=f.source;a.target='_blank';a.rel='noreferrer';fc.append(a);box.append(fc)}
   updateBoard();
   const prog=el('div','tr-prog');box.append(prog);prog.animate([{transform:'scaleX(1)'},{transform:'scaleX(0)'}],{duration:4000,fill:'forwards'});
