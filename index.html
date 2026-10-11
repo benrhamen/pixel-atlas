@@ -741,7 +741,7 @@ const regionSymbols={"Africa":"<svg class=\"atlas-region-ring\" xmlns=\"http://w
 const root=document.getElementById('wiz');if(!root)return;
 function paint(){
  const title=root.querySelector('h2');if(!title||!['Where is home?','Which part of the world?'].includes(title.textContent))return;
- root.querySelectorAll('.card').forEach(card=>{const label=card.querySelector('.tt'),ic=card.querySelector('.ic');if(!label||!ic||ic.querySelector('.atlas-region-ring'))return;const svg=regionSymbols[label.textContent];if(svg)ic.innerHTML=svg;});
+ root.querySelectorAll('.card').forEach(card=>{const label=card.querySelector('.tt'),ic=card.querySelector('.ic');if(!label||!ic||ic.querySelector('.atlas-region-ring'))return;let svg=regionSymbols[label.textContent];if(svg&&title.textContent==='Which part of the world?'&&label.textContent==='Africa')svg=svg.replace('stroke="#fff" stroke-width="4"','stroke="none"');if(svg)ic.innerHTML=svg;});
 }
 new MutationObserver(paint).observe(root,{childList:true,subtree:true});paint();
 })();
